@@ -1,11 +1,24 @@
 # Pomodoro Timer
 
-### Installation
+## Pictures
+
+**Dark Theme**
+
+![alt text](image3.png)
+![alt text](image.png)
+
+**Light Theme**
+
+![alt text](image-2.png)
+
+![alt text](image-5.png)
+
+## Installation
 
 **Step one:** Cloning this repository.
 
 ```
-git clone
+git clone https://github.com/XDKAY/Pomodoro-Timer.git
 ```
 
 **Step two:** Go to the directory.
