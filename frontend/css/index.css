@@ -1,0 +1,647 @@
+@import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
+@import url('theme.css');
+@import url('responsive.css');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    transition: background-color 0.3s ease, 
+               color 0.3s ease, 
+               border-color 0.3s ease,
+               box-shadow 0.3s ease;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-size: 24px;
+    font-family: Russo One;
+    color: #fff;
+    background: #1a1e24;
+}
+
+a { 
+    text-decoration: none;
+}
+
+/* Container */
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column; 
+    min-height: 100vh;
+    padding: 20px;
+    gap: 20px; 
+}
+
+/* Card Pomodoro Timer */
+.card-pomodoro-timer {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    width: 800px;
+    min-height: 650px;
+    border-radius: 40px;
+    background: #232931;
+    overflow: hidden;
+}
+
+.card-pomodoro-timer-container {
+    height: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 30px;
+    min-height: 0;
+}
+
+/* Main View */
+.card-pomodoro-timer-main-view {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    gap: 30px;
+}
+
+.card-pomodoro-timer-menu {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-pomodoro-timer-menu-list {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+    padding: 0;
+    margin: 0;
+}
+
+.card-pomodoro-timer-menu-button {  
+    color: #5a6370;
+    padding: 8px 20px;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    background: transparent;
+}
+
+.card-pomodoro-timer-menu-button.active-button {
+    background: #2e3a4a;
+    color: #cb75ea;
+}
+
+.card-pomodoro-timer-menu-button:hover {
+    color: #cb75ea;
+}
+
+.card-pomodoro-timer-time {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    margin: 0;
+}
+
+.card-pomodoro-timer-time p {
+    font-size: 72px;
+    letter-spacing: 8px;
+    margin: 0;
+}
+
+.card-pomodoro-timer-background-sounds {
+    width: 100%;
+}
+
+.card-pomodoro-timer-background-sounds-label {
+    display: block;
+    color: #5a6370;
+    font-size: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+.card-pomodoro-timer-sound-options {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.card-pomodoro-timer-sound-option {
+    cursor: pointer;
+}
+
+.card-pomodoro-timer-sound-option input[type="radio"] {
+    display: none;
+}
+
+.card-pomodoro-timer-sound-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    padding: 12px 20px;
+    background: #1a1e24;
+    border: 2px solid #2e3a4a;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+    height: 100%;
+}
+
+.card-pomodoro-timer-sound-card i {
+    font-size: 24px;
+    color: #5a6370;
+    transition: all 0.3s ease;
+}
+
+.card-pomodoro-timer-sound-card span {
+    color: #5a6370;
+    font-size: 20px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.card-pomodoro-timer-sound-option input[type="radio"]:checked + .card-pomodoro-timer-sound-card {
+    border-color: #cb75ea;
+    background: #2e3a4a;
+}
+
+.card-pomodoro-timer-sound-option input[type="radio"]:checked + .card-pomodoro-timer-sound-card i,
+.card-pomodoro-timer-sound-option input[type="radio"]:checked + .card-pomodoro-timer-sound-card span {
+    color: #cb75ea;
+}
+
+.card-pomodoro-timer-sound-card:hover {
+    border-color: #cb75ea;
+    transform: translateY(-3px);
+}
+
+.card-pomodoro-timer-sound-card:hover i,
+.card-pomodoro-timer-sound-card:hover span {
+    color: #cb75ea;
+}
+
+.card-pomodoro-timer-section-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    width: 100%;
+}
+
+.card-pomodoro-timer-button {
+    background: #2e3a4a;
+    color: #ffffff;
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    transition: all 0.3s ease;
+}
+
+.card-pomodoro-timer-button:nth-child(2) {
+    width: 78px;
+    height: 78px;
+    background: #cb75ea;
+    font-size: 30px;
+    box-shadow: 0 0px 15px #cb75ea8a;
+}
+
+.card-pomodoro-timer-button:nth-child(odd):hover {
+    background: #cb75ea;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(203, 117, 234, 0.4);
+}
+
+/* Кнопка полноэкранного режима */
+.fullscreen-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 45px;
+    height: 45px;
+    border-radius: 12px;
+    background: #1a1e24;
+    color: #5a6370;
+    border: 2px solid #2e3a4a;
+    font-size: 24px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.fullscreen-btn:hover {
+    border-color: #cb75ea;
+    color: #cb75ea;
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(203, 117, 234, 0.5);
+}
+
+.fullscreen-btn:active {
+    transform: scale(0.95);
+}
+
+/* Settings */
+.card-pomodoro-timer-settings {
+    width: 100%;
+    height: 100%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+}
+
+.card-pomodoro-timer-settings-container {
+    width: 100%;
+    min-height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    flex: 1;
+    gap: 20px;
+}
+
+.card-pomodoro-timer-settings-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    flex-shrink: 0;
+}
+
+.back-btn {
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    left: -10px;
+}
+
+.back-btn:hover {
+    color: #cb75ea;
+    background: transparent;
+}
+
+.card-pomodoro-timer-settings-header h3 {
+    margin: 0;
+    text-align: center;
+}
+
+.settings-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 20px;
+    flex: 1;
+    justify-content: center;
+}
+
+.settings-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    width: 100%;
+    padding-top: 15px;
+    padding-bottom: 10px;
+    flex-shrink: 0;
+}
+
+.timer-settings-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    width: 100%;
+}
+
+.timer-setting-item {
+    text-align: center;
+}
+
+.timer-setting-item label {
+    display: block;
+    color: #5a6370;
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 15px;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+.timer-setting-item input {
+    width: 100%;
+    padding: 18px 12px;
+    background: #1a1e24;
+    border: 2px solid #2e3a4a;
+    border-radius: 15px;
+    color: #ffffff;
+    font-size: 28px;
+    text-align: center;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.timer-setting-item input:focus {
+    border-color: #cb75ea;
+}
+
+.timer-setting-item input::-webkit-inner-spin-button,
+.timer-setting-item input::-webkit-outer-spin-button {
+    opacity: 0.5;
+    background: #2e3a4a;
+    height: 30px;
+}
+
+/* Переключатель темы */
+.theme-toggle-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.theme-toggle-btn {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #5a6370;
+    background: #1a1e24;
+    padding: 12px 30px;
+    border: 2px solid #2e3a4a;
+    border-radius: 15px;
+    font-size: 18px;
+    font-family: 'Russo One', sans-serif;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.theme-toggle-btn:hover {
+    color: #cb75ea;
+    border-color: #cb75ea;
+    transform: scale(1.05);
+}
+
+/* Регулировка громкости */
+.volume-control-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+}
+
+.volume-control-item {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.volume-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #5a6370;
+    font-size: 18px;
+}
+
+.volume-slider-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 10px 0;
+}
+
+/* Стилизация ползунка */
+input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 10px;
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 10px;
+    background: transparent;
+    border-radius: 5px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 24px;
+    height: 24px;
+    background: #cb75ea;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-top: -7px;
+    border: 3px solid #7d4990;
+    box-shadow: 0 2px 10px rgba(203, 117, 234, 0.3);
+    transition: all 0.2s ease;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+    transform: scale(1.2);
+    box-shadow: 0 4px 15px rgba(203, 117, 234, 0.5);
+}
+
+input[type="range"]::-webkit-slider-thumb:active {
+    transform: scale(1.1);
+    box-shadow: 0 2px 8px rgba(203, 117, 234, 0.4);
+}
+
+/* Firefox */
+input[type="range"]::-moz-range-track {
+    width: 100%;
+    height: 10px;
+    background: #2e3a4a;
+    border-radius: 5px;
+    border: none;
+}
+
+input[type="range"]::-moz-range-thumb {
+    width: 24px;
+    height: 24px;
+    background: #cb75ea;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 3px solid #fff;
+    box-shadow: 0 2px 10px rgba(203, 117, 234, 0.3);
+    transition: all 0.2s ease;
+}
+
+input[type="range"]::-moz-range-thumb:hover {
+    transform: scale(1.2);
+    box-shadow: 0 4px 15px rgba(203, 117, 234, 0.5);
+}
+
+input[type="range"]::-moz-range-progress {
+    height: 10px;
+    background: #cb75ea;
+    border-radius: 5px;
+}
+
+/* IE/Edge */
+input[type="range"]::-ms-track {
+    width: 100%;
+    height: 10px;
+    background: transparent;
+    border-color: transparent;
+    color: transparent;
+}
+
+input[type="range"]::-ms-fill-lower {
+    background: #cb75ea;
+    border-radius: 5px;
+}
+
+input[type="range"]::-ms-fill-upper {
+    background: #2e3a4a;
+    border-radius: 5px;
+}
+
+input[type="range"]::-ms-thumb {
+    width: 24px;
+    height: 24px;
+    background: #cb75ea;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 3px solid #fff;
+}
+
+/* Значение громкости */
+.volume-value {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: bold;
+    min-width: 75px;
+    width: 75px;
+    text-align: center;
+    padding: 10px 15px;
+    background: #1a1e24;
+    border-radius: 10px;
+    flex-shrink: 0;
+    box-sizing: border-box;
+    white-space: nowrap;
+    font-variant-numeric: tabular-nums;
+}
+
+/* Кнопка сохранения */
+.settings-save-section {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    width: 100%;
+    padding-top: 15px;
+    padding-bottom: 5px;
+    flex-shrink: 0;
+}
+
+.save-settings-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #cb75ea;
+    color: #ffffff;
+    border: none;
+    padding: 14px 28px;
+    border-radius: 30px;
+    font-size: 22px;
+    font-weight: 500;
+    font-family: 'Russo One', sans-serif;
+    cursor: pointer;
+    gap: 10px;
+    transition: all 0.3s ease;
+}
+
+.save-settings-btn:hover {
+    box-shadow: 0 10px 15px rgba(203, 117, 234, 0.3);
+    transform: translateY(-2px);
+}
+
+.save-settings-btn:active {
+    transform: translateY(0);
+}
+
+/* Прогресс сессий */
+.session-progress-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.session-label {
+    color: #5a6370;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.session-progress {
+    color: #ffffff;
+    font-weight: 500;
+    letter-spacing: 4px;
+}
+
+.bi {
+    line-height: 1;
+    display: inline-block;
+}
+
+/* Дополнительные transitions */
+.card-pomodoro-timer-menu-button,
+.card-pomodoro-timer-button,
+.card-pomodoro-timer-sound-card,
+.fullscreen-btn,
+.theme-toggle-btn,
+.save-settings-btn {
+    transition: all 0.3s ease;
+}
+
+input[type="range"] {
+    transition: background 0.3s ease;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    transition: all 0.3s ease;
+}

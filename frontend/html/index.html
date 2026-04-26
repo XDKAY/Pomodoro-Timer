@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="/static/css/theme.css">
+    <link rel="stylesheet" href="/static/css/index.css">
+    <link rel="icon" href="/static/img/logo.png" type="image/png">
+    
+    <title>Pomodoro Timer</title>
+</head>
+<body>
+
+    <button class="fullscreen-btn" id="fullscreenBtn" title="Fullscreen">
+        <i class="bi bi-fullscreen"></i>
+    </button>
+
+    <div class="container">
+        
+        <div class="card-pomodoro-timer">
+
+            <div class="card-pomodoro-timer-container">
+
+                <div class="card-pomodoro-timer-main-view">
+
+                    <nav class="card-pomodoro-timer-menu">
+
+                        <ul class="card-pomodoro-timer-menu-list">
+                            <li class="card-pomodoro-timer-item">
+                                <a href="#" class="card-pomodoro-timer-menu-button active-button">
+                                    Focus
+                                </a>
+                            </li>
+
+                            <li class="card-pomodoro-timer-item">
+                                <a href="#" class="card-pomodoro-timer-menu-button">
+                                    Break
+                                </a>
+                            </li>
+
+                            <li class="card-pomodoro-timer-item">
+                                <a href="#" class="card-pomodoro-timer-menu-button">
+                                    Rest
+                                </a>
+                            </li>
+                        </ul> <!-- card pomodoro timer menu list -->
+
+                    </nav> <!-- card pomodoro timer menu -->
+
+                    <div class="card-pomodoro-timer-time">
+                        <p>00:00</p>
+                    </div>  <!-- card pomodoro timer time -->
+
+                    <div class="session-progress-container">
+                        <span class="session-label">Sessions</span>
+                        <span class="session-progress" id="sessionProgress">1/5</span>
+                    </div>
+
+                    <div class="card-pomodoro-timer-background-sounds">
+
+                        <label class="card-pomodoro-timer-background-sounds-label">
+                            Background sounds (in development)
+                        </label> <!-- card pomodoro timer background sounds label -->
+
+                        <div class="card-pomodoro-timer-sound-options">
+
+                            <label class="card-pomodoro-timer-sound-option">
+
+                                <input type="radio" name="sound" value="rain">
+
+                                <span class="card-pomodoro-timer-sound-card">
+                                    <i class="bi bi-cloud-rain-fill"></i>
+                                    <span>Rain</span>
+                                </span> <!-- card pomodoro timer sound card -->
+
+                            </label> <!-- card pomodoro timer sound option -->
+
+                            <label class="card-pomodoro-timer-sound-option">
+
+                                <input type="radio" name="sound" value="forest">
+
+                                <span class="card-pomodoro-timer-sound-card">
+                                    <i class="bi bi-tree-fill"></i>
+                                    <span>Forest</span>
+                                </span> <!-- card pomodoro timer sound card -->
+
+                            </label> <!-- card pomodoro timer sound option -->
+
+                            <label class="card-pomodoro-timer-sound-option">
+
+                                <input type="radio" name="sound" value="sea">
+
+                                <span class="card-pomodoro-timer-sound-card">
+                                    <i class="bi bi-water"></i>
+                                    <span>Sea</span>
+                                </span> <!-- card pomodoro timer sound card -->
+
+                            </label> <!-- card pomodoro timer sound option -->
+
+                            <label class="card-pomodoro-timer-sound-option">
+
+                                <input type="radio" name="sound" value="none" checked>
+
+                                <span class="card-pomodoro-timer-sound-card">
+                                    <i class="bi bi-volume-mute-fill"></i>
+                                    <span>No sound</span>
+                                </span> <!-- card pomodoro timer sound card -->
+
+                            </label> <!-- card pomodoro timer sound option -->
+
+                        </div> <!-- card pomodoro timer sound options -->
+
+                    </div> <!-- card pomodoro timer background sounds -->
+
+                    <div class="card-pomodoro-timer-section-buttons">
+
+                        <a href="#" class="card-pomodoro-timer-button">
+                            <i class="bi bi-arrow-repeat"></i>
+                        </a>
+
+                        <a href="#" class="card-pomodoro-timer-button">
+                            <i class="bi bi-play-fill"></i>
+                        </a>
+
+                        <a href="#" class="card-pomodoro-timer-button" id="settingsBtn">
+                            <i class="bi bi-gear-fill"></i>
+                        </a>
+
+                    </div> <!-- card pomodoro timer section buttonss -->
+
+
+                </div>
+                
+
+                <div class="card-pomodoro-timer-settings" style="display: none;">
+
+                    <div class="card-pomodoro-timer-settings-container">
+
+                        <div class="card-pomodoro-timer-settings-header">
+                            <button class="back-btn" id="backBtn">
+                                <i class="bi bi-caret-left-fill"></i>
+                            </button>
+                            <h3>Settings</h3>
+                        </div> <!-- card pomodoro timer settings header -->
+
+                        <form class="settings-form" id="settingsForm">
+                            <div class="settings-section">
+                                <div class="timer-settings-grid">
+                                    <div class="timer-setting-item">
+                                        <label for="focusTime">Focus</label>
+                                        <input type="number" id="focusTime" name="focusTime" value="30" min="1" max="90" required>
+                                    </div>
+                                    <div class="timer-setting-item">
+                                        <label for="breakTime">Break</label>
+                                        <input type="number" id="breakTime" name="breakTime" value="10" min="1" max="30" required>
+                                    </div>
+                                    <div class="timer-setting-item">
+                                        <label for="restTime">Rest</label>
+                                        <input type="number" id="restTime" name="restTime" value="15" min="1" max="30" required>
+                                    </div>
+                                    <div class="timer-setting-item">
+                                        <label for="sessions">Sessions</label>
+                                        <input type="number" id="sessions" name="sessions" value="5" min="1" max="30" required>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Переключатель темы -->
+                            <div class="settings-section">
+                                <div class="theme-toggle-container">
+                                    <button type="button" class="theme-toggle-btn" id="themeToggleBtn">
+                                        <i class="bi bi-moon-fill theme-icon"></i>
+                                        <span class="theme-text">Dark Mode</span>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="settings-section">
+                                <div class="volume-control-container">
+                                    <div class="volume-control-item">
+                                        <label for="volumeSlider" class="volume-label">
+                                            <span>Background Sound Volume</span>
+                                        </label>
+                                        <div class="volume-slider-wrapper">
+                                            <input type="range" id="volumeSlider" name="volumeSlider" 
+                                                min="0" max="100" value="50" step="1">
+                                            <span class="volume-value" id="volumeValue">50%</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </form>
+
+                        <div class="settings-save-section">
+                            <button type="submit" class="save-settings-btn" id="saveSettingsBtn">
+                                Save Changes
+                            </button>
+                        </div>
+
+                    </div>
+
+
+                </div> <!-- card pomodoro timer settings -->
+
+            </div> <!-- card pomodoro timer container -->
+
+        </div> <!-- card pomodoro timer -->
+
+    </div> <!-- container -->
+
+
+    <script src="/static/js/volume_sound.js"></script>
+    <script src="/static/js/fullscreen.js"></script>
+    <script src="/static/js/change_theme.js"></script>
+    <script src="/static/js/save_settings.js"></script>
+    <script src="/static/js/settings.js"></script>
+    <script src="/static/js/timer.js"></script>
+    <script src="/static/js/index.js"></script>
+</body>
+</html>

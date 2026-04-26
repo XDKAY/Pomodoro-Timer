@@ -1,0 +1,634 @@
+/* responsive.css */
+
+/* Планшеты (портретная ориентация) */
+@media screen and (max-width: 1024px) {
+    .card-pomodoro-timer {
+        width: 85%;
+        min-height: 600px;
+    }
+
+    .card-pomodoro-timer-container {
+        padding: 35px 30px;
+    }
+
+    .card-pomodoro-timer-main-view {
+        gap: 30px;
+    }
+
+    .card-pomodoro-timer-menu-list {
+        gap: 40px;
+    }
+
+    .card-pomodoro-timer-time p {
+        font-size: 68px;
+        letter-spacing: 6px;
+    }
+
+    .card-pomodoro-timer-sound-options {
+        gap: 15px;
+    }
+
+    .card-pomodoro-timer-sound-card {
+        padding: 10px 15px;
+    }
+
+    .card-pomodoro-timer-sound-card span {
+        font-size: 16px;
+    }
+
+    .card-pomodoro-timer-sound-card i {
+        font-size: 22px;
+    }
+
+    .timer-settings-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 18px;
+    }
+
+    .timer-setting-item input {
+        font-size: 26px;
+        padding: 16px 10px;
+    }
+}
+
+/* Небольшие планшеты */
+@media screen and (max-width: 768px) {
+    body {
+        font-size: 20px;
+    }
+
+    .container {
+        padding: 15px;
+        min-height: 100vh;
+    }
+
+    .card-pomodoro-timer {
+        width: 100%;
+        min-height: auto;
+        border-radius: 30px;
+    }
+
+    .card-pomodoro-timer-container {
+        padding: 30px 20px;
+    }
+
+    .card-pomodoro-timer-main-view {
+        gap: 25px;
+    }
+
+    .card-pomodoro-timer-menu-list {
+        gap: 30px;
+    }
+
+    .card-pomodoro-timer-menu-button {
+        padding: 7px 18px;
+        font-size: 17px;
+        border-radius: 25px;
+    }
+
+    .card-pomodoro-timer-time p {
+        font-size: 58px;
+        letter-spacing: 5px;
+    }
+
+    .card-pomodoro-timer-background-sounds-label {
+        font-size: 17px;
+        margin-bottom: 15px;
+    }
+
+    .card-pomodoro-timer-sound-options {
+        gap: 10px;
+    }
+
+    .card-pomodoro-timer-sound-card {
+        padding: 10px 8px;
+        border-radius: 12px;
+        gap: 4px;
+    }
+
+    .card-pomodoro-timer-sound-card span {
+        font-size: 14px;
+    }
+
+    .card-pomodoro-timer-sound-card i {
+        font-size: 18px;
+    }
+
+    .card-pomodoro-timer-section-buttons {
+        gap: 25px;
+    }
+
+    .card-pomodoro-timer-button {
+        width: 55px;
+        height: 55px;
+        font-size: 20px;
+    }
+
+    .card-pomodoro-timer-button:nth-child(2) {
+        width: 68px;
+        height: 68px;
+        font-size: 26px;
+    }
+
+    /* Settings */
+    .card-pomodoro-timer-settings-container {
+        gap: 25px;
+    }
+
+    .settings-form {
+        gap: 25px;
+    }
+
+    .card-pomodoro-timer-settings-header h3 {
+        font-size: 23px;
+    }
+
+    .back-btn {
+        width: 36px;
+        height: 36px;
+        font-size: 20px;
+        left: -8px;
+    }
+
+    .timer-settings-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .timer-setting-item label {
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+
+    .timer-setting-item input {
+        padding: 14px 10px;
+        font-size: 22px;
+        border-radius: 12px;
+    }
+
+    .theme-toggle-btn {
+        padding: 10px 24px;
+        font-size: 15px;
+    }
+
+    .volume-label {
+        font-size: 15px;
+    }
+
+    .volume-slider-wrapper {
+        gap: 15px;
+    }
+
+    .volume-value {
+        font-size: 17px;
+        min-width: 65px;
+        width: 65px;
+        padding: 8px 12px;
+    }
+
+    .save-settings-btn {
+        padding: 12px 24px;
+        font-size: 19px;
+    }
+
+    .fullscreen-btn {
+        bottom: 20px;
+        right: 20px;
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+    }
+}
+
+/* Мобильные устройства */
+@media screen and (max-width: 480px) {
+    body {
+        font-size: 16px;
+    }
+
+    .container {
+        padding: 10px;
+    }
+
+    .card-pomodoro-timer {
+        width: 100%;
+        min-height: auto;
+        border-radius: 25px;
+    }
+
+    .card-pomodoro-timer-container {
+        padding: 20px 15px;
+    }
+
+    .card-pomodoro-timer-main-view {
+        gap: 20px;
+    }
+
+    .card-pomodoro-timer-menu-list {
+        gap: 12px;
+        flex-wrap: wrap;
+    }
+
+    .card-pomodoro-timer-menu-button {
+        padding: 6px 14px;
+        font-size: 15px;
+        border-radius: 20px;
+    }
+
+    .card-pomodoro-timer-time p {
+        font-size: 46px;
+        letter-spacing: 4px;
+    }
+
+    .card-pomodoro-timer-background-sounds-label {
+        font-size: 15px;
+        margin-bottom: 12px;
+    }
+
+    .card-pomodoro-timer-sound-options {
+        gap: 6px;
+    }
+
+    .card-pomodoro-timer-sound-card {
+        padding: 8px 5px;
+        border-radius: 10px;
+        gap: 3px;
+        border-width: 1.5px;
+    }
+
+    .card-pomodoro-timer-sound-card span {
+        font-size: 12px;
+    }
+
+    .card-pomodoro-timer-sound-card i {
+        font-size: 16px;
+    }
+
+    .card-pomodoro-timer-section-buttons {
+        gap: 18px;
+    }
+
+    .card-pomodoro-timer-button {
+        width: 48px;
+        height: 48px;
+        font-size: 18px;
+    }
+
+    .card-pomodoro-timer-button:nth-child(2) {
+        width: 60px;
+        height: 60px;
+        font-size: 24px;
+    }
+
+    /* Settings */
+    .card-pomodoro-timer-settings-container {
+        gap: 20px;
+    }
+
+    .settings-form {
+        gap: 20px;
+    }
+
+    .card-pomodoro-timer-settings-header h3 {
+        font-size: 20px;
+    }
+
+    .back-btn {
+        width: 30px;
+        height: 30px;
+        font-size: 18px;
+        left: -5px;
+    }
+
+    .timer-settings-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .timer-setting-item label {
+        font-size: 12px;
+        margin-bottom: 8px;
+    }
+
+    .timer-setting-item input {
+        padding: 10px 8px;
+        font-size: 18px;
+        border-radius: 10px;
+    }
+
+    .theme-toggle-btn {
+        padding: 8px 18px;
+        font-size: 14px;
+        gap: 7px;
+    }
+
+    .volume-label {
+        font-size: 14px;
+    }
+
+    .volume-slider-wrapper {
+        gap: 10px;
+    }
+
+    .volume-value {
+        font-size: 15px;
+        min-width: 55px;
+        width: 55px;
+        padding: 6px 8px;
+    }
+
+    .save-settings-btn {
+        padding: 10px 20px;
+        font-size: 17px;
+        border-radius: 25px;
+    }
+
+    input[type="range"] {
+        height: 8px;
+    }
+
+    input[type="range"]::-webkit-slider-thumb {
+        width: 20px;
+        height: 20px;
+        margin-top: -6px;
+    }
+
+    .fullscreen-btn {
+        bottom: 15px;
+        right: 15px;
+        width: 36px;
+        height: 36px;
+        font-size: 18px;
+        border-radius: 10px;
+    }
+}
+
+/* Маленькие мобильные устройства */
+@media screen and (max-width: 380px) {
+    .card-pomodoro-timer-container {
+        padding: 15px 10px;
+    }
+
+    .card-pomodoro-timer-main-view {
+        gap: 15px;
+    }
+
+    .card-pomodoro-timer-menu-list {
+        gap: 8px;
+    }
+
+    .card-pomodoro-timer-menu-button {
+        padding: 5px 10px;
+        font-size: 13px;
+        border-radius: 18px;
+    }
+
+    .card-pomodoro-timer-time p {
+        font-size: 38px;
+        letter-spacing: 3px;
+    }
+
+    .card-pomodoro-timer-background-sounds-label {
+        font-size: 13px;
+        margin-bottom: 10px;
+    }
+
+    .card-pomodoro-timer-sound-options {
+        gap: 5px;
+    }
+
+    .card-pomodoro-timer-sound-card {
+        padding: 6px 3px;
+        border-radius: 8px;
+        gap: 2px;
+        border-width: 1px;
+    }
+
+    .card-pomodoro-timer-sound-card span {
+        font-size: 10px;
+    }
+
+    .card-pomodoro-timer-sound-card i {
+        font-size: 14px;
+    }
+
+    .card-pomodoro-timer-section-buttons {
+        gap: 12px;
+    }
+
+    .card-pomodoro-timer-button {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+    }
+
+    .card-pomodoro-timer-button:nth-child(2) {
+        width: 50px;
+        height: 50px;
+        font-size: 20px;
+    }
+
+    /* Settings */
+    .timer-settings-grid {
+        gap: 8px;
+    }
+
+    .timer-setting-item label {
+        font-size: 11px;
+        margin-bottom: 5px;
+    }
+
+    .timer-setting-item input {
+        padding: 8px 6px;
+        font-size: 16px;
+        border-radius: 8px;
+    }
+
+    .theme-toggle-btn {
+        padding: 6px 15px;
+        font-size: 12px;
+        gap: 6px;
+        border-radius: 8px;
+    }
+
+    .volume-label {
+        font-size: 12px;
+    }
+
+    .volume-value {
+        font-size: 13px;
+        min-width: 48px;
+        width: 48px;
+        padding: 5px 6px;
+    }
+
+    .save-settings-btn {
+        padding: 8px 16px;
+        font-size: 15px;
+    }
+
+    .card-pomodoro-timer-settings-header h3 {
+        font-size: 18px;
+    }
+
+    .back-btn {
+        width: 28px;
+        height: 28px;
+        font-size: 16px;
+    }
+}
+
+/* Высокие экраны (Full HD и выше) */
+@media screen and (min-height: 900px) {
+    .card-pomodoro-timer {
+        min-height: 680px;
+    }
+
+    .card-pomodoro-timer-main-view {
+        gap: 35px;
+    }
+
+    .card-pomodoro-timer-time p {
+        font-size: 78px;
+    }
+
+    .card-pomodoro-timer-sound-options {
+        gap: 25px;
+    }
+}
+
+@media screen and (min-height: 1080px) {
+    .card-pomodoro-timer {
+        min-height: 750px;
+    }
+
+    .card-pomodoro-timer-time p {
+        font-size: 84px;
+    }
+
+    .card-pomodoro-timer-background-sounds {
+        margin: 5px 0;
+    }
+
+    .card-pomodoro-timer-sound-options {
+        gap: 30px;
+    }
+}
+
+/* Wide screens */
+@media screen and (min-width: 1400px) {
+    .card-pomodoro-timer {
+        width: 950px;
+        min-height: 700px;
+    }
+
+    .card-pomodoro-timer-container {
+        padding: 45px 35px;
+    }
+
+    .card-pomodoro-timer-time p {
+        font-size: 80px;
+    }
+
+    .card-pomodoro-timer-sound-options {
+        gap: 30px;
+    }
+}
+
+@media screen and (min-width: 1600px) {
+    .card-pomodoro-timer {
+        width: 1000px;
+        min-height: 720px;
+    }
+
+    .card-pomodoro-timer-time p {
+        font-size: 88px;
+        letter-spacing: 10px;
+    }
+
+    .card-pomodoro-timer-sound-options {
+        gap: 35px;
+    }
+
+    .card-pomodoro-timer-sound-card {
+        padding: 14px 24px;
+    }
+}
+
+/* Ландшафтная ориентация для мобильных */
+@media screen and (max-height: 500px) and (orientation: landscape) {
+    .container {
+        padding: 8px;
+        min-height: auto;
+    }
+
+    .card-pomodoro-timer {
+        min-height: auto;
+        border-radius: 20px;
+    }
+
+    .card-pomodoro-timer-container {
+        padding: 12px 15px;
+    }
+
+    .card-pomodoro-timer-main-view {
+        gap: 8px;
+    }
+
+    .card-pomodoro-timer-menu-list {
+        gap: 15px;
+    }
+
+    .card-pomodoro-timer-menu-button {
+        padding: 4px 12px;
+        font-size: 13px;
+    }
+
+    .card-pomodoro-timer-time {
+        flex: 0.5;
+    }
+
+    .card-pomodoro-timer-time p {
+        font-size: 30px;
+        letter-spacing: 2px;
+    }
+
+    .card-pomodoro-timer-background-sounds-label {
+        font-size: 12px;
+        margin-bottom: 5px;
+    }
+
+    .card-pomodoro-timer-sound-options {
+        gap: 6px;
+    }
+
+    .card-pomodoro-timer-sound-card {
+        padding: 5px 4px;
+        border-radius: 6px;
+        gap: 2px;
+    }
+
+    .card-pomodoro-timer-sound-card span {
+        font-size: 9px;
+    }
+
+    .card-pomodoro-timer-sound-card i {
+        font-size: 14px;
+    }
+
+    .card-pomodoro-timer-section-buttons {
+        gap: 10px;
+    }
+
+    .card-pomodoro-timer-button {
+        width: 35px;
+        height: 35px;
+        font-size: 14px;
+    }
+
+    .card-pomodoro-timer-button:nth-child(2) {
+        width: 45px;
+        height: 45px;
+        font-size: 18px;
+    }
+}
